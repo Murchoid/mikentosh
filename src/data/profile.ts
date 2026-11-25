@@ -1,0 +1,151 @@
+import type { OperatorProfile } from '../types/workstation'
+
+export const OPERATOR_PROFILE: OperatorProfile = {
+  name: 'Michael Kamau',
+  tagline: 'Software engineer. Systems enthusiast. Independent builder.',
+  quote:
+    'I enjoy understanding how software works beneath the surface, designing dependable systems, and building things that solve real problems.',
+  location: 'Nairobi, Kenya',
+  email: 'hello@michaelkamau.dev',
+  introduction: [
+    'I am a software engineer based in Nairobi focused on backend engineering, operational software architecture, and the mechanics that sit underneath everyday abstractions.',
+    'Much of my practical work centres on systems where correctness matters: enterprise resource planning workflows, multi-location inventory ledgers, hardware-to-backend integrations, and internal developer tooling.',
+    'Outside client and production work, I treat my computer as a small engineering workshop—building toy interpreters, inspecting database internals, reading protocol specifications, and keeping field notes on what holds up in practice.',
+  ],
+  engineeringInterests: [
+    'Relational data modelling & transactional invariants',
+    'Distributed messaging, idempotency & failure recovery',
+    'Programming language implementation & bytecode runtimes',
+    'Storage engines, write-ahead logs & binary wire protocols',
+    'Operational backend systems (ERP, inventory & edge hardware)',
+    'Small, sharp command-line tools with minimal dependencies',
+  ],
+  technicalFocus: [
+    {
+      area: 'Backend & Systems',
+      details:
+        'Go, TypeScript/Node.js, Rust (exploratory), HTTP/TCP services, background job pipelines, event-driven service boundaries.',
+    },
+    {
+      area: 'Data & Persistence',
+      details:
+        'PostgreSQL, SQLite, Redis, schema design, lock-aware migrations, append-only audit ledgers, transactional outbox.',
+    },
+    {
+      area: 'Architecture & Integration',
+      details:
+        'Domain state machines, ERP/procurement workflows, RFID & serial reader ingestion, deterministic reconciliation.',
+    },
+    {
+      area: 'Tooling & Environment',
+      details:
+        'Linux, Git, Docker, SQL inspection tooling, automated integration harnesses, structured observability.',
+    },
+  ],
+  experience: [
+    {
+      period: 'Recent — Present',
+      role: 'Independent Backend & Systems Software Engineer',
+      context: 'Operational Software, Integrations & Custom Engineering · Nairobi',
+      highlights: [
+        'Designed and maintained backend services for inventory tracking, procurement, and operational ERP workflows backed by PostgreSQL.',
+        'Built edge ingestion pipelines bridging physical RFID hardware readers with cloud stock-movement state machines.',
+        'Replaced fragile synchronous cross-service calls with transactional outbox relays and idempotent consumers.',
+      ],
+    },
+    {
+      period: 'Previous',
+      role: 'Software Engineer — Full-Stack & Backend Systems',
+      context: 'Business Applications & Internal Tooling',
+      highlights: [
+        'Developed domain APIs, reporting pipelines, and multi-warehouse reconciliation models with strict auditability requirements.',
+        'Created internal schema inspection scripts and local integration fixtures to make deployments and debugging predictable.',
+      ],
+    },
+  ],
+  education: [
+    {
+      period: 'University Study',
+      qualification: 'B.Sc. in Computer Science / Software Engineering',
+      institution: 'Kenya',
+      notes:
+        'Foundations in data structures, operating systems, relational databases, computer networks, and language theory.',
+    },
+    {
+      period: 'Ongoing Independent Study',
+      qualification: 'Systems, Compilers & Database Internals',
+      institution: 'Self-Directed Reading & Implementation',
+      notes:
+        'Hands-on study through Crafting Interpreters, Designing Data-Intensive Applications, PostgreSQL documentation, and RFC specifications.',
+    },
+  ],
+  channels: [
+    {
+      id: 'email',
+      label: 'Electronic Mail',
+      value: 'hello@michaelkamau.dev',
+      href: 'mailto:hello@michaelkamau.dev',
+      protocol: 'SMTP / Direct',
+      description: 'Best channel for engineering roles, architecture discussions, or project inquiries.',
+    },
+    {
+      id: 'github',
+      label: 'GitHub',
+      value: 'github.com/michaelkamau',
+      href: 'https://github.com/michaelkamau',
+      protocol: 'Git / Source',
+      description: 'Open-source repositories, language experiments, and command-line utilities.',
+    },
+    {
+      id: 'linkedin',
+      label: 'LinkedIn',
+      value: 'linkedin.com/in/michaelkamau',
+      href: 'https://www.linkedin.com/in/michaelkamau',
+      protocol: 'Directory',
+      description: 'Professional history and work updates.',
+    },
+  ],
+}
+
+export function buildPlainTextResume(profile: OperatorProfile): string {
+  const lines: string[] = [
+    '========================================================================',
+    `${profile.name.toUpperCase()}`,
+    profile.tagline,
+    `Location: ${profile.location} | Email: ${profile.email}`,
+    '========================================================================',
+    '',
+    'SUMMARY',
+    '-------',
+    ...profile.introduction,
+    '',
+    'TECHNICAL FOCUS',
+    '---------------',
+    ...profile.technicalFocus.map((item) => `* ${item.area}: ${item.details}`),
+    '',
+    'EXPERIENCE',
+    '----------',
+    ...profile.experience.flatMap((exp) => [
+      `${exp.role} (${exp.period})`,
+      `${exp.context}`,
+      ...exp.highlights.map((h) => `  - ${h}`),
+      '',
+    ]),
+    'EDUCATION & STUDY',
+    '-----------------',
+    ...profile.education.flatMap((edu) => [
+      `${edu.qualification} — ${edu.institution} (${edu.period})`,
+      `  ${edu.notes}`,
+      '',
+    ]),
+    'ENGINEERING INTERESTS',
+    '---------------------',
+    ...profile.engineeringInterests.map((interest) => `* ${interest}`),
+    '',
+    'CONTACT',
+    '-------',
+    ...profile.channels.map((ch) => `${ch.label}: ${ch.value}`),
+  ]
+
+  return lines.join('\n')
+}
