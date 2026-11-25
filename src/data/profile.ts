@@ -6,7 +6,7 @@ export const OPERATOR_PROFILE: OperatorProfile = {
   quote:
     'I enjoy understanding how software works beneath the surface, designing dependable systems, and building things that solve real problems.',
   location: 'Nairobi, Kenya',
-  email: 'hello@michaelkamau.dev',
+  email: 'kamaucoder@gmail.com',
   introduction: [
     'I am a software engineer based in Nairobi focused on backend engineering, operational software architecture, and the mechanics that sit underneath everyday abstractions.',
     'Much of my practical work centres on systems where correctness matters: enterprise resource planning workflows, multi-location inventory ledgers, hardware-to-backend integrations, and internal developer tooling.',
@@ -24,7 +24,7 @@ export const OPERATOR_PROFILE: OperatorProfile = {
     {
       area: 'Backend & Systems',
       details:
-        'Go, TypeScript/Node.js, Rust (exploratory), HTTP/TCP services, background job pipelines, event-driven service boundaries.',
+        'Go, TypeScript/Node.js, HTTP/TCP services, background job pipelines, event-driven service boundaries.',
     },
     {
       area: 'Data & Persistence',
@@ -91,16 +91,16 @@ export const OPERATOR_PROFILE: OperatorProfile = {
     {
       id: 'github',
       label: 'GitHub',
-      value: 'github.com/michaelkamau',
-      href: 'https://github.com/michaelkamau',
+      value: 'github.com/Murchoid',
+      href: 'https://github.com/Murchoid',
       protocol: 'Git / Source',
       description: 'Open-source repositories, language experiments, and command-line utilities.',
     },
     {
       id: 'linkedin',
       label: 'LinkedIn',
-      value: 'linkedin.com/in/michaelkamau',
-      href: 'https://www.linkedin.com/in/michaelkamau',
+      value: 'linkedin.com/in/michale-kamau-084831250',
+      href: 'https://www.linkedin.com/in/michael-kamau-084831250',
       protocol: 'Directory',
       description: 'Professional history and work updates.',
     },
