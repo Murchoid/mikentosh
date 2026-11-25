@@ -4,7 +4,7 @@ export const OPERATOR_PROFILE: OperatorProfile = {
   name: 'Michael Kamau',
   tagline: 'Software engineer. Systems enthusiast. Independent builder.',
   quote:
-    'I enjoy understanding how software works beneath the surface, designing dependable systems, and building things that solve real problems.',
+    'I enjoy understanding how software works beneath the surface, designing dependable systems, and building things that solve real problems. Ocassionaly, I will start a technical book, read it halfway and start another :)',
   location: 'Nairobi, Kenya',
   email: 'kamaucoder@gmail.com',
   introduction: [
@@ -83,8 +83,8 @@ export const OPERATOR_PROFILE: OperatorProfile = {
     {
       id: 'email',
       label: 'Electronic Mail',
-      value: 'hello@michaelkamau.dev',
-      href: 'mailto:hello@michaelkamau.dev',
+      value: 'kamaucoder@gmail.com',
+      href: 'mailto:kamaucoder@gmail.com',
       protocol: 'SMTP / Direct',
       description: 'Best channel for engineering roles, architecture discussions, or project inquiries.',
     },
@@ -103,6 +103,14 @@ export const OPERATOR_PROFILE: OperatorProfile = {
       href: 'https://www.linkedin.com/in/michael-kamau-084831250',
       protocol: 'Directory',
       description: 'Professional history and work updates.',
+    },
+    {
+      id: 'x',
+      label: 'X',
+      value: 'x.com/MurchoidCoder',
+      href: 'https://www.x.com/MurchoidCoder',
+      protocol: 'Directory',
+      description: 'When I am not talking to my 1.6K followe in linkedIn, I am talking to my 1 liker in X.',
     },
   ],
 }
